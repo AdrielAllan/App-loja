@@ -1,0 +1,30 @@
+name: shopping_app
+description: A simple shopping app UI built with Flutter.
+
+publish_to: "none" # Remova se for publicar na pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1 # Versão mais estável e compatível
+  provider: ^6.0.0 # Para gerenciar o estado do carrinho
+  cupertino_icons: ^1.0.0 # Para usar ícones do Cupertino
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true # Habilita o uso do design Material
+  assets:
+    - assets/shoe.jpg
+    - assets/tshirt.jpg
+    - assets/watch.jpg
+  # Alternativa se você quiser carregar todas as imagens dentro da pasta assets/
+  # assets:
+  #   - assets/
