@@ -22,15 +22,18 @@ class ProductCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 4,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment:
+              CrossAxisAlignment.center, // Centraliza o conteúdo
           children: [
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: product.image.isNotEmpty
-                    ? Image.asset(
+                    ? Image.network(
                         product.image,
                         fit: BoxFit.cover,
+                        width: double
+                            .infinity, // Garante que a imagem ocupe toda a largura
                         errorBuilder: (context, error, stackTrace) {
                           return const Icon(Icons.error);
                         },
@@ -40,9 +43,14 @@ class ProductCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                product.name,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+              child: Center(
+                // Centraliza o nome do produto
+                child: Text(
+                  product.name,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign
+                      .center, // Garante que o texto fique centralizado
+                ),
               ),
             ),
             Padding(

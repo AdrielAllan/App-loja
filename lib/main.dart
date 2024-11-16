@@ -29,11 +29,15 @@ class _ShoppingAppState extends State<ShoppingApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Remover a faixa de depuração
-      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light, // Corrigido o operador
+      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.blue[50],
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
         ),
         scaffoldBackgroundColor: Colors.white, // Cor de fundo para o modo claro
         buttonTheme: ButtonThemeData(buttonColor: Colors.blue),
@@ -42,16 +46,20 @@ class _ShoppingAppState extends State<ShoppingApp> {
         primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.blue[900],
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
-        scaffoldBackgroundColor: Colors.black, // Cor de fundo para o modo escuro
+        scaffoldBackgroundColor:
+            Colors.black, // Cor de fundo para o modo escuro
         buttonTheme: ButtonThemeData(buttonColor: Colors.blue[800]),
-        textTheme: TextTheme(
-          bodyLarge: TextStyle(color: Colors.white), // Corrigido para bodyLarge
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.white), // Ajuste para bodyText1
         ),
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Modo Noturno'),
           actions: [
             // Botão para alternar entre os modos
             IconButton(
